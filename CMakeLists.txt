@@ -84,6 +84,7 @@ if (STATIC_BUILD)
     add_definitions(-DXRAY_STATIC_BUILD)
 
     set(LIBS_LINK_TYPE STATIC)
+    #set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 else()
     set(LIBS_LINK_TYPE SHARED)
 endif()
@@ -262,7 +263,7 @@ set(LUA_FOUND true)
 message("CMake build ${CMAKE_BUILD_TYPE}, CFLAGS=${CMAKE_C_FLAGS}, CXXFLAGS=${CMAKE_CXX_FLAGS}")
 
 add_definitions(-D_MT -D_CPPUNWIND -DPURE_DYNAMIC_CAST -DDECLARE_SPECIALIZATION -DM_NOSTDCONTAINERS_EXT)
-add_definitions(-DLUABIND_DYNAMIC_LINK) #self-explanatory
+#add_definitions(-DLUABIND_DYNAMIC_LINK) #self-explanatory
 add_definitions(-DdSINGLE) # for ODE and xrPhysics
 if (MASTER_GOLD)
     add_definitions(-DLUABIND_NO_EXCEPTIONS)
