@@ -81,8 +81,13 @@ option(STATIC_BUILD "Use static build" ${MASTER_GOLD})
 message(STATUS "STATIC_BUILD: ${STATIC_BUILD}")
 if (STATIC_BUILD)
     # XXX: Uncomment only after build with XRAY_STATIC_BUILD is fixed
-    #add_definitions(-DXRAY_STATIC_BUILD)
+    add_definitions(-DXRAY_STATIC_BUILD)
+
+    set(LIBS_LINK_TYPE STATIC)
+else()
+    set(LIBS_LINK_TYPE SHARED)
 endif()
+message(STATUS "LIBS_LINK_TYPE: ${LIBS_LINK_TYPE}")
 
 function(xr_install tgt)
     if (NOT MSVC)

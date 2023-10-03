@@ -198,6 +198,7 @@ void CDemoPlay::stat_Stop()
 #define FIX(a)           \
     while (a >= m_count) \
     a -= m_count
+
 void spline1(float t, Fvector* p, Fvector* ret)
 {
     float t2 = t * t;

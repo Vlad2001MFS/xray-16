@@ -96,10 +96,13 @@
             "label": "Build Debug",
             "type": "shell",
             "options": {
-                "cwd": "${workspaceFolder}/bin"
+                "cwd": "${workspaceFolder}/bin",
+                "env": {
+                    "LC_ALL": "C"
+                }
             },
             "command": [
-                "cmake .. -DCMAKE_BUILD_TYPE=Debug",
+                "cmake .. -DCMAKE_BUILD_TYPE=Debug -DSTATIC_BUILD=ON",
                 "&&",
                 "make -j16"
             ],
@@ -110,7 +113,10 @@
             "label": "Build Release",
             "type": "shell",
             "options": {
-                "cwd": "${workspaceFolder}/bin"
+                "cwd": "${workspaceFolder}/bin",
+                "env": {
+                    "LC_ALL": "C"
+                }
             },
             "command": [
                 "cmake .. -DCMAKE_BUILD_TYPE=Release -DSTATIC_BUILD=ON",
