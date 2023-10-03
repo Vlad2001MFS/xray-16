@@ -1,13 +1,15 @@
 {
-  "[cpp]": {
-    "editor.formatOnSave": false
-  },
-  "[c]": {
-    "editor.formatOnSave": false
-  },
-  "[xml]": {
-    "editor.formatOnSave": false
-  },
-  "files.trimTrailingWhitespace": false,
-  "files.insertFinalNewline": true
+    "[cpp]": {
+        "editor.formatOnSave": false
+    },
+    "[c]": {
+        "editor.formatOnSave": false
+    },
+    "[xml]": {
+        "editor.formatOnSave": false
+    },
+    "files.trimTrailingWhitespace": false,
+    "files.insertFinalNewline": true,
+    "cmake.buildDirectory": "${workspaceFolder}/bin",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
